@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+    
+</head>
+<body>
+    <header>
+        <img src="../img/homeimg.jpeg" />
+       <nav>
+           <div>
+               <ul>
+                   <li>
+                       <a class="navLink"> @Html.ActionLink("Home", "Index", "Home", null, new { @class = "actionLink" }) </a>
+                   </li>
+                   <li>
+                       <a class="navLink"> @Html.ActionLink("About", "About", "Home", null, new { @class = "actionLink" }) </a>
+                   </li>
+                   <li>
+                       <a class="navLink"> @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "actionLink" }) </a>
+                   </li>
+                   <li>
+                       <a class="navLink"> @Html.ActionLink("Projects", "Projects", "Home", null, new { @class = "actionLink" }) </a>
+                   </li>
+               </ul>
+           </div>
+       </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>Jayanthi Priyanka @DateTime.Now.ToString("yy-MM-dd")</footer>
+
+</body>
+</html>
+
