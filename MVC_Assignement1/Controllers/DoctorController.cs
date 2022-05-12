@@ -15,7 +15,6 @@ namespace MVC_Assignement1.Controllers
         public IActionResult Index(double input_temp, string Temperature)
         {
             ViewBag.temperature = input_temp;
-            ViewBag.scale = Temperature;
             ViewBag.result = FevercheckModel.Fever_check(input_temp, Temperature);
             return View();
 

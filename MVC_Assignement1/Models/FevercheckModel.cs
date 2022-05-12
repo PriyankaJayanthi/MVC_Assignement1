@@ -8,7 +8,7 @@ namespace MVC_Assignement1.Models
            string ret = "";
             if (scale == "Celsius")
              {
-                if (temp > 38) ret = "You have fever";
+                if (temp > 37) ret = "You have fever";
                 else if (temp < 35) ret = "you have hypothermis";
                 else ret = "your temparature is normal";
              }
