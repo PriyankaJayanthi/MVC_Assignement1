@@ -28,9 +28,9 @@ namespace MVC_Assignement1
             }
             app.UseStaticFiles();
             app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
+                app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "Home", pattern: "{controller=Doctor}/{action=Index}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"

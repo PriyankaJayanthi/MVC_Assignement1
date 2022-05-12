@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MVC_Assignement1.Models.FevercheckModel>
+
+@{
+
+
+    ViewBag.Title = "Fever_Check";
+}
+
+<h2>CheckFever</h2>
+
+<form action="/Doctor/Index/" method="post">
+    <div>
+
+        Enter Temp:<input type="number" name="input_temp" id="msg" step="any"><br />
+        <input type="radio" id="tempChoice1"
+               name="Temperature" value="Celsius" checked>
+        <label for="tempChoice1">Celsius</label><br />
+        <input type="radio" id="tempChoice2"
+               name="Temperature" value="Fahrenheit">
+        <label for="tempChoice2">Fahrenheit</label><br />
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+    @{
+        var data = ViewBag.temperature;
+    }
+
+<h2>
+    Input Temperature:
+    @if (data != 0)
+    {@ViewBag.temperature}
+</h2>
+    <h2>Input Scale: @ViewBag.scale</h2>
+    <h2>Result : @ViewBag.result</h2>
+</form>
+

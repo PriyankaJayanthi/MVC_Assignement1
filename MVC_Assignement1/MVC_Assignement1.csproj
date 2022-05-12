@@ -12,6 +12,7 @@
     <None Remove="Views\Home\" />
     <None Remove="Views\Shared\" />
     <None Remove="bootstrap" />
+    <None Remove="Views\Doctor\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
@@ -25,6 +26,7 @@
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\img\" />
+    <Folder Include="Views\Doctor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

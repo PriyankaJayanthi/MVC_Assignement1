@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <img src="../img/homeimg.jpeg" />
+        <img src="~/img/homeimg.jpeg" />
        <nav>
            <div>
                <ul>
@@ -25,6 +25,9 @@
                    <li>
                        <a class="nav_link"> @Html.ActionLink("Projects", "Projects", "Home", null, new { @class = "actionLink" }) </a>
                    </li>
+                   <li>
+                       <a class="nav_link"> @Html.ActionLink("Doctor", "Index", "Doctor", null, new { @class = "actionLink" }) </a>
+                   </li>
                </ul>
            </div>
        </nav>
@@ -35,7 +38,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer>Jayanthi Priyanka @DateTime.Now.ToString("yy-MM-dd")</footer>
+    <footer>©Jayanthi Priyanka @DateTime.Now.ToString("yy-MM-dd")</footer>
 
 </body>
 </html>
