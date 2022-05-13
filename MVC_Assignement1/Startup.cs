@@ -17,6 +17,12 @@ namespace MVC_Assignement1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,8 +33,12 @@ namespace MVC_Assignement1
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+
             app.UseRouting();
-                app.UseEndpoints(endpoints =>
+
+            app.UseSession();
+
+            app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "fevervheck",
@@ -39,6 +49,15 @@ namespace MVC_Assignement1
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
+               
+                endpoints.MapControllerRoute(
+                    name: "guessgame",
+                    pattern: "Guessgame",
+                    defaults: new { controller = "Guessgame", action = "GuessView" }
+                    
+                    );
+
+
             });
         }
     }
