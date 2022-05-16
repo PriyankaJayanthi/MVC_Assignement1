@@ -20,8 +20,8 @@ namespace MVC_Assignement1.Controllers
             HttpContext.Session.SetInt32("rndvalue", rand_num);
             return View();
         }
-
-        public IActionResult CheckGussing(int input_num)
+        [HttpPost]
+        public IActionResult Guessview(int input_num)
         {
             int game_num = (int)HttpContext.Session.GetInt32("rndvalue");
             ViewBag.Message = GameModel.CheckGuess(input_num, game_num);
