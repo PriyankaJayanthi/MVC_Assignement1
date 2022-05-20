@@ -13,7 +13,7 @@ namespace MVC_Assignement1.Controllers
 {
     public class GuessgameController : Controller
     {
-        // GET: /<controller>/
+        [HttpGet] 
         public IActionResult GuessView()
         {
             int rand_num = GameModel.GetGuessNumber();
